@@ -7,6 +7,8 @@ def send_file(filename):
         data = file.read(BUFFSIZE)
         s.send(data)
         if not data:
+            s.close()
+            file.close()
             print("Done sending!")
             break
 
