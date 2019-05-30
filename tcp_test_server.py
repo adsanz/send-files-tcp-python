@@ -9,6 +9,8 @@ def handle_connection(conn):
         file.write(data)
         if not data:
             print("Done, file saved as {}".format("sent_"+filename) )
+            conn.close()
+            file.close()
             break
 
 
